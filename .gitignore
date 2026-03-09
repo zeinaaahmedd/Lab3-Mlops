@@ -1,0 +1,8 @@
+/venv/
+/mlruns/
+/.dvc/
+/data/train.csv
+/data/test.csv
+/data/melbourne_housing.csv
+model.joblib
+

@@ -1,0 +1,44 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python preprocess.py
+    deps:
+    - path: data/melbourne_housing.csv
+      hash: md5
+      md5: cc467c28044d01770d8784cf287d1b6e
+      size: 7296418
+    - path: preprocess.py
+      hash: md5
+      md5: 5870a3db7f6796fde4af06b25be10b9f
+      size: 1608
+    outs:
+    - path: data/test.csv
+      hash: md5
+      md5: 3466ee4a608c7ecc9c6c757878cf5704
+      size: 263944
+    - path: data/train.csv
+      hash: md5
+      md5: 40ba784f7338a3255a2959901a6573b1
+      size: 1055233
+  train:
+    cmd: python train.py
+    deps:
+    - path: data/train.csv
+      hash: md5
+      md5: 40ba784f7338a3255a2959901a6573b1
+      size: 1055233
+    - path: train.py
+      hash: md5
+      md5: 351f9623b9424d841470bdcf8b73397b
+      size: 1505
+  tune:
+    cmd: python tune.py
+    deps:
+    - path: data/train.csv
+      hash: md5
+      md5: 40ba784f7338a3255a2959901a6573b1
+      size: 1055233
+    - path: tune.py
+      hash: md5
+      md5: 4db0a1d295d722a1a3fda68236babeee
+      size: 2238
