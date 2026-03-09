@@ -5,6 +5,8 @@ import mlflow
 import mlflow.sklearn
 import joblib
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 def train_model():
     # 1. Set the Experiment Name [cite: 93]

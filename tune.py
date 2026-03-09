@@ -3,6 +3,8 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import mlflow
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 def tune_model():
     # Set the experiment name
